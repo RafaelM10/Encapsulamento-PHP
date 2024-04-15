@@ -66,13 +66,13 @@ class Carro implements InterfaceCar
 
   public function acelerar()
   {
-    $this->velocidade += 20;
-    echo "Velocidade atual: {$this->velocidade}Km/h</br>";
+    $this->setVelocidade($this->getVelocidade() += 20);
+    echo "Velocidade atual: {$this->getVelocidade()}Km/h</br>";
   }
 
   public function trocarMarcha()
   {
-    if ($this->velocidade >= 20) {
+    if ($this->getVelocidade() >= 20) {
       echo "Você acabou de mudar a marcha</br>";
     }
   }
@@ -90,10 +90,10 @@ class Carro implements InterfaceCar
   }
   public function fecharPorta()
   {
-    if ($this->getComprar()) {
+    if ($this->abrirPorta()) {
       echo "<p>Porta fechada, pode acelerar agora!</p>";
     } else {
-      echo "<p>Porta fechada para quem não comprou carro nenhum!</p>";
+      echo "<p>Porta fechada,não comprou carro nenhum sem test drive!</p>";
     }
   }
 }
